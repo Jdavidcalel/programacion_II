@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cdcce76-26c1-43ab-8626-f4803055e609" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Semana05/Tarea4_SistemaEnvios/src/EnvioInternacional.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Semana05/Tarea4_SistemaEnvios/src/EnvioNacional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Semana05/Tarea4_SistemaEnvios/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Semana05/Tarea4_SistemaEnvios/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Semana05/Tarea4_SistemaEnvios/Tarea4_SistemaEnvios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Semana05/Tarea4_SistemaEnvios/Tarea4_SistemaEnvios.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +25,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3ILWnsHR5SUaq6h2ZY4JehoXSqt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,8 +36,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
@@ -47,26 +50,16 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\USER\Documents\GitHub\programacion_II\programacion_II_2026\Semana05" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
-      <setting name="addClasspath" value="true" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
