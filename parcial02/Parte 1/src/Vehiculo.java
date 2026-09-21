@@ -7,6 +7,7 @@ public abstract class Vehiculo {
 
     public Vehiculo(String placa, String propietario,
                     String horaIngreso, double horasUtilizadas) {
+
         this.placa = placa;
         this.propietario = propietario;
         this.horaIngreso = horaIngreso;
@@ -32,6 +33,7 @@ public abstract class Vehiculo {
     public abstract double calcularCosto();
 
     public void mostrarInformacion() {
+
         System.out.println("Placa: " + placa);
         System.out.println("Propietario: " + propietario);
         System.out.println("Hora de ingreso: " + horaIngreso);
