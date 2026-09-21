@@ -30,8 +30,13 @@ public class Main {
                 opcion = Integer.parseInt(scanner.nextLine());
 
                 switch (opcion) {
+
                     case 1:
-                        System.out.println("Registrar vehículo");
+                        registrarVehiculo(
+                                scanner,
+                                vehiculos,
+                                placasRegistradas
+                        );
                         break;
 
                     case 2:
@@ -63,12 +68,144 @@ public class Main {
                 }
 
             } catch (NumberFormatException e) {
-                System.out.println("Error: debe ingresar un número.");
+
+                System.out.println(
+                        "Error: debe ingresar un número."
+                );
+
                 opcion = 0;
             }
 
         } while (opcion != 7);
 
         scanner.close();
+    }
+
+
+    public static void registrarVehiculo(
+            Scanner scanner,
+            ArrayList<Vehiculo> vehiculos,
+            HashSet<String> placasRegistradas) {
+
+        System.out.println("\n===== REGISTRAR VEHÍCULO =====");
+
+        // PLACA
+        System.out.print("Ingrese la placa: ");
+        String placa = scanner.nextLine().trim().toUpperCase();
+
+        if (placa.isEmpty()) {
+            System.out.println(
+                    "Error: la placa no puede estar vacía."
+            );
+            return;
+        }
+
+        // VALIDAR PLACA DUPLICADA
+        if (placasRegistradas.contains(placa)) {
+            System.out.println(
+                    "Error: la placa ya está registrada."
+            );
+            return;
+        }
+
+        // PROPIETARIO
+        System.out.print("Ingrese el nombre del propietario: ");
+        String propietario = scanner.nextLine().trim();
+
+        if (propietario.isEmpty()) {
+            System.out.println(
+                    "Error: el propietario no puede estar vacío."
+            );
+            return;
+        }
+
+        // HORA DE INGRESO
+        System.out.print("Ingrese la hora de ingreso: ");
+        String horaIngreso = scanner.nextLine().trim();
+
+        if (horaIngreso.isEmpty()) {
+            System.out.println(
+                    "Error: la hora de ingreso no puede estar vacía."
+            );
+            return;
+        }
+
+        // TIPO DE VEHÍCULO
+        System.out.println("\nTipo de vehículo:");
+        System.out.println("1. Automóvil");
+        System.out.println("2. Motocicleta");
+        System.out.print("Seleccione una opción: ");
+
+        String tipo = scanner.nextLine();
+
+        if (!tipo.equals("1") && !tipo.equals("2")) {
+            System.out.println(
+                    "Error: tipo de vehículo inválido."
+            );
+            return;
+        }
+
+        // HORAS UTILIZADAS
+        try {
+
+            System.out.print("Ingrese las horas utilizadas: ");
+
+            double horas =
+                    Double.parseDouble(scanner.nextLine());
+
+            if (horas <= 0) {
+                System.out.println(
+                        "Error: las horas deben ser mayores que cero."
+                );
+                return;
+            }
+
+            // POLIMORFISMO
+            Vehiculo vehiculo;
+
+            if (tipo.equals("1")) {
+
+                vehiculo = new Automovil(
+                        placa,
+                        propietario,
+                        horaIngreso,
+                        horas
+                );
+
+            } else {
+
+                vehiculo = new Motocicleta(
+                        placa,
+                        propietario,
+                        horaIngreso,
+                        horas
+                );
+            }
+
+            // GUARDAR EN LAS COLECCIONES
+            vehiculos.add(vehiculo);
+            placasRegistradas.add(placa);
+
+            System.out.println(
+                    "\nVehículo registrado correctamente."
+            );
+
+            System.out.printf(
+                    "Costo: Q%.2f%n",
+                    vehiculo.calcularCosto()
+            );
+
+        } catch (NumberFormatException e) {
+
+            System.out.println(
+                    "Error: las horas deben ingresarse como un número."
+            );
+
+        } finally {
+
+            System.out.println(
+                    "Proceso de registro finalizado."
+            );
+        }
     }
 }
