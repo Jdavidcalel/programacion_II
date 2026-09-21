@@ -1,0 +1,29 @@
+-- =====================================================
+-- TAREA VII - POSTGRESQL INVENTARIO
+-- Archivo: 01_creacion.sql
+-- Descripcion: Creacion de la base de datos y tabla
+-- =====================================================
+
+-- Crear la base de datos
+CREATE DATABASE control_inventario;
+
+-- IMPORTANTE:
+-- Despues de crear la base de datos, conectarse a
+-- control_inventario antes de ejecutar lo siguiente.
+
+
+-- Crear tabla producto
+CREATE TABLE producto (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    codigo VARCHAR(15) NOT NULL,
+    nombre VARCHAR(80) NOT NULL,
+    categoria VARCHAR(40) NOT NULL,
+    precio NUMERIC(8,2) NOT NULL,
+    stock INTEGER NOT NULL,
+    activo BOOLEAN NOT NULL DEFAULT TRUE,
+
+    CONSTRAINT pk_producto PRIMARY KEY (id),
+    CONSTRAINT uk_producto_codigo UNIQUE (codigo),
+    CONSTRAINT ck_producto_precio CHECK (precio > 0),
+    CONSTRAINT ck_producto_stock CHECK (stock >= 0)
+);
