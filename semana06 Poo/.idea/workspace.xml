@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="df50b6fb-570a-49e6-9302-b75f2917d47f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/Tarea4_SistemaEnvios.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/evidencia_David_Calel.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/src/Envio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/src/EnvioInternacional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/src/EnvioNacional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Semana05/Tarea4_SistemaEnvios/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/src/main/java/com/umg/vetcare/vetcareapi/VetcareApiApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare-api/src/test/java/com/umg/vetcare/vetcareapi/VetcareApiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/src/main/java/com/umg/vetcare/vetcare/VetcareApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/src/main/java/com/umg/vetcare/vetcare/controller/MascotaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/src/main/java/com/umg/vetcare/vetcare/entity/Mascota.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana 12/vetcare/src/test/java/com/umg/vetcare/vetcare/VetcareApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/.idea/semana03.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/DesafiosLogicos/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/DesafiosLogicos/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/DesafiosLogicos/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/DesafiosLogicos/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/DesafiosLogicos/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/DesafiosLogicos/DesafiosLogicos.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/DesafiosLogicos/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/DesafiosLogicos/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/Evidencias.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/out/production/semana03/condiciones.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/out/production/semana03/ejercicio_for.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/untitled/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/untitled/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/untitled/src/condiciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/untitled/src/ejercicio_for.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana03/untitled/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/CrontrolParqueo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/CrontrolParqueo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/CrontrolParqueo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/CrontrolParqueo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/CrontrolParqueo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/CrontrolParqueo/CrontrolParqueo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/CrontrolParqueo/src/ControlParqueo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/Evidencia de proceso ControlParqueo.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/TareaControlParqueo/TareaControlParqueo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/evidencia presupuesto.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/untitled/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/untitled/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/untitled/semana04.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/untitled/src/ControlPresupuesto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana04/untitled/src/EjemploProcedimiento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/Tarea4_SistemaEnvios/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/Tarea4_SistemaEnvios/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/Tarea4_SistemaEnvios/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/Tarea4_SistemaEnvios/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/semana06.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/src/Ave.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/src/Gato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/src/Mascota.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/src/Perro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana06/untitled/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/Semana08.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/src/MainArrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/src/MainHashMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semana08/Semana08/src/MainHashSet.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Ie1pO3t5GUXHd6ZH8XYXfaaUYh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/USER/Documents/GitHub/programacion_II/programacion_II_2026/semana06 Poo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df50b6fb-570a-49e6-9302-b75f2917d47f" name="Changes" comment="" />
+      <created>1788110402222</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788110402222</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
