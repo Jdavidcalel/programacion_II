@@ -26,81 +26,307 @@ Desarrollar un sistema que permita gestionar salas y reservas de bandas o artist
 - pgAdmin 4
 - PostgreSQL JDBC Driver 42.7.7
 
-## Avance actual — hasta el paso 7
+## 7. Estructura del proyecto
 
-- [x] Creación del proyecto Maven `ReservasSalasEnsayo`.
-- [x] Creación de la base de datos `reservas_ensayo`.
-- [x] Creación de las tablas `salas` y `reservas` con relación mediante clave foránea.
-- [x] Registro de cuatro salas de prueba.
-- [x] Incorporación de la dependencia JDBC en `pom.xml`.
-- [x] Creación de `ConexionBD.java` para abrir conexiones a PostgreSQL.
-- [x] Creación y ejecución de `PruebaConexion.java`.
-- [x] Consulta exitosa de las salas almacenadas desde Java.
-- [ ] Implementación de las clases de modelo y la lógica de negocio.
-- [ ] Validación de traslapes y cálculo automático de costos.
-- [ ] Menú interactivo y operaciones completas de reservas.
-- [ ] Pruebas integrales y entrega final.
-
-## Estructura actual
+El proyecto utiliza paquetes para organizar las clases según su responsabilidad.
 
 ```text
 ReservasSalasEnsayo/
+│
 ├── pom.xml
 ├── README.md
+│
 └── src/
     └── main/
-        └── java/
-            └── com/
-                └── umg/
-                    └── reservas/
-                        ├── PruebaConexion.java
-                        └── conexion/
-                            └── ConexionBD.java
+        ├── java/
+        │   └── com/
+        │       └── umg/
+        │           └── reservas/
+        │               │
+        │               ├── conexion/
+        │               │   └── ConexionBD.java
+        │               │
+        │               ├── modelo/
+        │               │   ├── Sala.java
+        │               │   └── Reserva.java
+        │               │
+        │               ├── dao/
+        │               │   ├── SalaDAO.java
+        │               │   └── ReservaDAO.java
+        │               │
+        │               ├── PruebaConexion.java
+        │               ├── PruebaSalaDAO.java
+        │               ├── PruebaReservaDAO.java
+        │               └── PruebaConsultasReserva.java
+        │
+        └── resources/
 ```
 
-## Base de datos
+---
 
-**Nombre:** `reservas_ensayo`
+## 8. Programación orientada a objetos
 
-**Tabla `salas`:** `id_sala`, `nombre`, `capacidad`, `tarifa_hora`, `estado`.
+Se implementaron clases para representar las entidades principales del sistema.
 
-**Tabla `reservas`:** `id_reserva`, `id_sala`, `cliente`, `fecha`, `hora_inicio`, `hora_fin`, `costo_total`, `estado`.
+### Clase Sala.java
 
-La tabla `reservas` contiene una clave foránea a `salas` y una restricción que exige `hora_fin > hora_inicio`. La validación de traslapes está pendiente.
+Representa una sala de ensayo.
 
-### Salas de prueba
+Contiene información como:
 
-| Sala | Capacidad | Tarifa por hora |
-|---|---:|---:|
-| Sala Rock | 6 | Q75.00 |
-| Sala Acustica | 4 | Q50.00 |
-| Sala Profesional | 10 | Q125.00 |
-| Sala Premium | 8 | Q100.00 |
+- Identificador de la sala.
+- Nombre.
+- Capacidad.
+- Tarifa por hora.
+- Estado.
 
-## Prueba de conexión realizada
+Se implementaron constructores, métodos de acceso y un método para mostrar información.
 
-Se ejecutó `PruebaConexion.java` desde IntelliJ IDEA. La aplicación utilizó JDBC para consultar los registros de la tabla `salas` y mostró la información recuperada desde PostgreSQL en la consola.
+### Clase Reserva.java
 
-### Configuración local
+Representa una reserva realizada por un cliente.
 
-La clase `ConexionBD.java` utiliza una conexión JDBC hacia una instancia local de PostgreSQL, con una URL de la forma:
+Contiene:
+
+- Identificador de reserva.
+- Identificador de sala.
+- Cliente.
+- Fecha.
+- Hora de inicio.
+- Hora de finalización.
+- Costo total.
+- Estado.
+
+También incorpora la lógica para calcular el costo de una reserva.
+
+---
+
+## 9. Conexión con PostgreSQL
+
+Se implementó la clase:
+
+`ConexionBD.java`
+
+Su función es establecer la conexión entre Java y PostgreSQL utilizando JDBC.
+
+La conexión utiliza una URL con la siguiente estructura:
 
 ```text
 jdbc:postgresql://localhost:5432/reservas_ensayo
 ```
 
-El puerto y las credenciales deben ajustarse al entorno donde se ejecute el proyecto.
+La conexión fue comprobada mediante la clase `PruebaConexion.java`.
 
-**Seguridad:** no subir contraseñas reales a GitHub. Antes de publicar el repositorio, retirar las credenciales del código fuente y utilizar variables de entorno o un archivo de configuración excluido de Git.
+## 10. Implementación del patrón DAO
 
-## Próximos pasos
+Se implementó el patrón DAO (Data Access Object) para separar las operaciones de base de datos de las clases de modelo.
 
-1. Crear la clase `Sala` y la clase `Reserva` aplicando POO.
-2. Implementar acceso a datos y servicios de reservas.
-3. Agregar controles de disponibilidad, validaciones y cálculo de tarifas.
-4. Desarrollar el menú de consola.
-5. Ejecutar pruebas funcionales y documentar resultados.
+### SalaDAO.java
 
-## Modalidad
+Permite:
 
-Se desarrolla inicialmente como aplicación de consola. Si el docente requiere interfaz gráfica, se podrá incorporar posteriormente, separando la presentación de la lógica de negocio y el acceso a datos.
+- Consultar todas las salas registradas.
+- Buscar una sala por su identificador.
+- Recuperar la información almacenada en PostgreSQL.
+
+### ReservaDAO.java
+
+Actualmente contiene los siguientes métodos:
+
+| Método | Funcionalidad |
+|---|---|
+| listarReservas() | Consultar todas las reservas |
+| registrarReserva() | Registrar una nueva reserva |
+| buscarPorFecha() | Consultar reservas por fecha |
+| buscarPorCliente() | Buscar reservas por cliente |
+| convertirReserva() | Convertir registros SQL en objetos Java |
+
+El método `convertirReserva()` permite reutilizar código y evitar duplicaciones en las consultas.
+
+---
+
+## 11. Validación de horarios
+
+Se implementaron validaciones para controlar los horarios de las reservas.
+
+Las reglas principales son:
+
+- La fecha no puede ser anterior a la actual.
+- La hora final debe ser posterior a la inicial.
+- No se permiten reservas activas traslapadas para la misma sala.
+- Las reservas deben realizarse sobre salas existentes y activas.
+
+### Restricción en PostgreSQL
+
+Se habilitó la extensión:
+
+`btree_gist`
+
+Posteriormente, se configuró una restricción de exclusión para impedir conflictos entre reservas activas.
+
+La restricción se identifica como:
+
+`reservas_sin_traslapes`
+
+Esta validación protege la integridad de la información directamente desde PostgreSQL.
+
+---
+
+## 12. Cálculo automático de costos
+
+El costo de una reserva se calcula utilizando la tarifa por hora de la sala y el tiempo reservado.
+
+### Fórmula
+
+Costo total = Duración de la reserva × Tarifa por hora
+
+### Ejemplo
+
+Sala seleccionada: Sala Rock
+
+Tarifa por hora: Q75.00
+
+Horario reservado: 14:00 a 17:00
+
+Duración: 3 horas
+
+Costo total:
+
+3 × Q75.00 = Q225.00
+
+El cálculo se realiza desde Java y el resultado se almacena en PostgreSQL.
+
+---
+
+## 13. Registro de reservas
+
+Se implementó el método:
+
+`registrarReserva()`
+
+Este método realiza las siguientes operaciones:
+
+1. Valida el nombre del cliente.
+2. Comprueba la fecha.
+3. Valida las horas de inicio y finalización.
+4. Verifica que la sala exista.
+5. Comprueba que la sala esté activa.
+6. Calcula el costo total.
+7. Registra la información en PostgreSQL.
+8. Controla los errores por conflictos de horarios.
+
+### Primera reserva registrada
+
+Se realizó una prueba con los siguientes datos:
+
+| Campo | Valor |
+|---|---|
+| ID de reserva | 1 |
+| Sala | Sala Rock |
+| Cliente | Banda Los Rockeros |
+| Fecha | 2026-10-30 |
+| Hora de inicio | 14:00 |
+| Hora de finalización | 17:00 |
+| Costo total | Q225.00 |
+| Estado | ACTIVA |
+
+La reserva fue almacenada correctamente en PostgreSQL y verificada desde pgAdmin 4.
+
+---
+
+## 14. Consultas por fecha
+
+Se implementó el método:
+
+`buscarPorFecha()`
+
+Permite recuperar las reservas correspondientes a una fecha específica.
+
+### Prueba realizada
+
+Fecha consultada: 2026-10-30
+
+Resultado:
+
+- Total de reservas encontradas: 1.
+- Cliente: Banda Los Rockeros.
+- Sala: Sala Rock.
+- Horario: 14:00 a 17:00.
+- Costo: Q225.00.
+
+La consulta fue ejecutada exitosamente desde IntelliJ IDEA.
+
+---
+
+## 15. Consultas por cliente
+
+Se implementó el método:
+
+`buscarPorCliente()`
+
+Permite buscar reservas mediante el nombre del cliente.
+
+Se utiliza el operador `ILIKE` de PostgreSQL para realizar búsquedas sin distinguir mayúsculas y minúsculas.
+
+### Prueba realizada
+
+Texto buscado:
+
+`Rockeros`
+
+Resultado:
+
+- Total de reservas encontradas: 1.
+- Cliente: Banda Los Rockeros.
+- Fecha: 2026-10-30.
+- Costo total: Q225.00.
+- Estado: ACTIVA.
+
+La consulta fue ejecutada correctamente.
+
+---
+
+## 16. Pruebas realizadas
+
+Durante el desarrollo se realizaron las siguientes pruebas:
+
+| Prueba | Resultado |
+|---|---|
+| Conexión JDBC con PostgreSQL | Exitosa |
+| Consulta de salas registradas | Exitosa |
+| Búsqueda de sala por ID | Implementada |
+| Registro de reserva | Exitoso |
+| Almacenamiento del costo total | Exitoso |
+| Configuración de restricción de traslapes | Realizada |
+| Consulta de reservas por fecha | Exitosa |
+| Consulta de reservas por cliente | Exitosa |
+
+La validación de conflictos de horarios requiere completar su comprobación funcional y documentar el resultado.
+
+---
+
+## 17. Avance del proyecto
+
+### Funcionalidades completadas
+
+- [x] Creación del proyecto Maven.
+- [x] Configuración de Java 25.
+- [x] Creación de la base de datos PostgreSQL.
+- [x] Creación de las tablas y sus relaciones.
+- [x] Registro de cuatro salas de ensayo.
+- [x] Configuración de JDBC.
+- [x] Prueba de conexión con PostgreSQL.
+- [x] Implementación de la clase Sala.
+- [x] Implementación de la clase Reserva.
+- [x] Implementación de SalaDAO.
+- [x] Implementación de ReservaDAO.
+- [x] Consulta de salas.
+- [x] Registro de reservas.
+- [x] Cálculo automático de costos.
+- [x] Configuración de restricción de horarios.
+- [x] Consulta de reservas por fecha.
+- [x] Consulta de reservas por cliente.
+- [x] Verificación de registros en pgAdmin 4.
+
+## 18. por el momento aqui llego, mañana tratare la manera de avanzar un poco mas.
+.
