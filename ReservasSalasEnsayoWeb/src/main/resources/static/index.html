@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reservas de Salas de Ensayo</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>Sistema de Reservas de Salas de Ensayo</h1>
+    <p>Administración de salas, clientes y reservas</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#salas">Salas disponibles</a>
+    <a href="#reservas">Registrar reserva</a>
+    <a href="#listado">Consultar reservas</a>
+</nav>
+
+<main>
+
+    <!-- INICIO E INDICADORES -->
+    <section id="inicio">
+        <h2>Bienvenido al sistema</h2>
+        <p>
+            Administra las salas de ensayo, consulta su disponibilidad
+            y registra las reservas de los clientes.
+        </p>
+
+        <div class="panel-indicadores">
+            <div class="tarjeta-indicador">
+                <h3>Reservas activas</h3>
+                <p id="total-reservas-activas">Cargando...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SALAS DISPONIBLES -->
+    <section id="salas">
+        <h2>Salas de ensayo</h2>
+        <div id="contenedor-salas">
+            <p>Cargando salas disponibles...</p>
+        </div>
+    </section>
+
+    <!-- REGISTRAR RESERVA -->
+    <section id="reservas">
+        <h2>Registrar nueva reserva</h2>
+
+        <form id="form-reserva">
+
+            <label for="sala">Sala:</label>
+            <select id="sala" required>
+                <option value="">Seleccione una sala</option>
+            </select>
+
+            <label for="cliente">Cliente:</label>
+            <input
+                    type="text"
+                    id="cliente"
+                    maxlength="100"
+                    placeholder="Nombre del cliente"
+                    required
+            >
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+
+            <label for="horaInicio">Hora de inicio:</label>
+            <input type="time" id="horaInicio" required>
+
+            <label for="horaFin">Hora de finalización:</label>
+            <input type="time" id="horaFin" required>
+
+            <button type="submit">Registrar reserva</button>
+        </form>
+
+        <div id="mensaje" role="status"></div>
+    </section>
+
+    <!-- CONSULTAR RESERVAS -->
+    <section id="listado">
+        <h2>Reservas registradas</h2>
+
+        <div class="filtros-reservas">
+            <input
+                    type="text"
+                    id="filtro-cliente"
+                    placeholder="Buscar por cliente"
+                    aria-label="Buscar por cliente"
+            >
+
+            <input
+                    type="date"
+                    id="filtro-fecha"
+                    aria-label="Filtrar por fecha"
+            >
+
+            <button type="button" id="btn-buscar">
+                Buscar
+            </button>
+
+            <button type="button" id="btn-mostrar-todas">
+                Mostrar todas
+            </button>
+        </div>
+
+        <div id="contenedor-reservas">
+            <p>Cargando reservas...</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Proyecto PF-28 | Programación II | UMG</p>
+</footer>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>
