@@ -4,9 +4,11 @@ package com.umg.reservas.controller;
 import com.umg.reservas.dto.ReservaRequestDTO;
 import com.umg.reservas.entity.Reserva;
 import com.umg.reservas.service.ReservaService;
+
 import jakarta.validation.Valid;
+
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -23,59 +25,111 @@ public class ReservaController {
         this.reservaService = reservaService;
     }
 
-    // GET: listar todas las reservas
+    // ==========================================
+    // LISTAR TODAS LAS RESERVAS
+    // GET /api/reservas
+    // ==========================================
+
     @GetMapping
-    public List<Reserva> listar() {
+    public List<Reserva> listarReservas() {
         return reservaService.listarReservas();
     }
 
-    // GET: buscar reserva por ID
+    // ==========================================
+    // BUSCAR RESERVA POR ID
+    // GET /api/reservas/{id}
+    // ==========================================
+
     @GetMapping("/{id}")
     public Reserva buscarPorId(@PathVariable Integer id) {
         return reservaService.buscarPorId(id);
     }
 
-    // GET: filtrar reservas por fecha
+    // ==========================================
+    // BUSCAR RESERVAS POR FECHA
+    // GET /api/reservas/fecha?fecha=2026-11-20
+    // ==========================================
+
     @GetMapping("/fecha")
     public List<Reserva> buscarPorFecha(
-            @RequestParam LocalDate fecha) {
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate fecha) {
+
         return reservaService.buscarPorFecha(fecha);
     }
 
-    // GET: filtrar reservas por cliente
+    // ==========================================
+    // BUSCAR RESERVAS POR CLIENTE
+    // GET /api/reservas/cliente?nombre=Juan
+    // ==========================================
+
     @GetMapping("/cliente")
     public List<Reserva> buscarPorCliente(
             @RequestParam String nombre) {
+
         return reservaService.buscarPorCliente(nombre);
     }
 
-    // POST: registrar una nueva reserva
+    // ==========================================
+    // REGISTRAR RESERVA
+    // POST /api/reservas
+    // ==========================================
+
     @PostMapping
-    public ResponseEntity<Reserva> registrar(
+    @ResponseStatus(HttpStatus.CREATED)
+    public Reserva registrarReserva(
             @Valid @RequestBody ReservaRequestDTO datos) {
 
-        Reserva reserva = reservaService.registrarReserva(
+        return reservaService.registrarReserva(
                 datos.getIdSala(),
                 datos.getCliente(),
                 datos.getFecha(),
                 datos.getHoraInicio(),
                 datos.getHoraFin()
         );
-
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(reserva);
     }
 
-    // PATCH: cancelar una reserva
+    // ==========================================
+    // ACTUALIZAR RESERVA
+    // PUT /api/reservas/{id}
+    // ==========================================
+
+    @PutMapping("/{id}")
+    public Reserva actualizarReserva(
+            @PathVariable Integer id,
+            @Valid @RequestBody ReservaRequestDTO datos) {
+
+        return reservaService.actualizarReserva(
+                id,
+                datos.getIdSala(),
+                datos.getCliente(),
+                datos.getFecha(),
+                datos.getHoraInicio(),
+                datos.getHoraFin()
+        );
+    }
+
+    // ==========================================
+    // CANCELAR RESERVA
+    // PATCH /api/reservas/{id}/cancelar
+    // ==========================================
+
     @PatchMapping("/{id}/cancelar")
-    public Reserva cancelar(@PathVariable Integer id) {
+    public Reserva cancelarReserva(
+            @PathVariable Integer id) {
+
         return reservaService.cancelarReserva(id);
     }
 
-    // GET: indicador de reservas activas
+    // ==========================================
+    // INDICADOR DE RESERVAS ACTIVAS
+    // GET /api/reservas/indicadores/activas
+    // ==========================================
+
     @GetMapping("/indicadores/activas")
-    public Map<String, Long> contarActivas() {
+    public Map<String, Long> contarReservasActivas() {
+
         return Map.of(
                 "reservasActivas",
                 reservaService.contarReservasActivas()

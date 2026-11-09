@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "d1b23f53-cbea-4e52-a6ce-f8d0a596f88f",
+    "name": "PF-28 - Sistema de Reservas de Salas de Ensayo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60053036",
+    "_collection_link": "https://go.postman.co/collection/60053036-d1b23f53-cbea-4e52-a6ce-f8d0a596f88f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Listar todas las salas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/salas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "salas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 - Consultar disponibilidad de salas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/salas/disponibles?fecha=2026-12-15&horaInicio=10:00&horaFin=12:00",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "salas",
+            "disponibles"
+          ],
+          "query": [
+            {
+              "key": "fecha",
+              "value": "2026-12-15"
+            },
+            {
+              "key": "horaInicio",
+              "value": "10:00"
+            },
+            {
+              "key": "horaFin",
+              "value": "12:00"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Registrar nueva reserva",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idSala\": 1,\r\n  \"cliente\": \"Banda Prueba Postman\",\r\n  \"fecha\": \"2026-12-22\",\r\n  \"horaInicio\": \"10:00\",\r\n  \"horaFin\": \"12:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/reservas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Actualizar reserva",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idSala\": 1,\r\n  \"cliente\": \"Banda Prueba Postman Actualizada\",\r\n  \"fecha\": \"2026-12-22\",\r\n  \"horaInicio\": \"10:00\",\r\n  \"horaFin\": \"13:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/reservas/12",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "reservas",
+            "12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05 - Cancelar reserva",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/reservas/12/cancelar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "reservas",
+            "12",
+            "cancelar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "06 - Error 400 - Horario inválido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idSala\": 1,\r\n  \"cliente\": \"Prueba Error 400\",\r\n  \"fecha\": \"2026-12-23\",\r\n  \"horaInicio\": \"15:00\",\r\n  \"horaFin\": \"10:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/reservas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "07 - Error 404 - Reserva inexistente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/reservas/99999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "reservas",
+            "99999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08 - Error 409 - Reserva ya cancelada",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/reservas/12/cancelar",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "reservas",
+            "12",
+            "cancelar"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}

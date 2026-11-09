@@ -11,7 +11,12 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @RestController
@@ -97,4 +102,31 @@ public class SalaController {
 
         return ResponseEntity.ok(salaDesactivada);
     }
+
+    // ==========================================
+    // CONSULTAR SALAS DISPONIBLES
+    // GET /api/salas/disponibles
+    // ==========================================
+
+    @GetMapping("/disponibles")
+    public List<Sala> consultarDisponibilidad(
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate fecha,
+
+            @RequestParam
+            @DateTimeFormat(pattern = "HH:mm")
+            LocalTime horaInicio,
+
+            @RequestParam
+            @DateTimeFormat(pattern = "HH:mm")
+            LocalTime horaFin) {
+
+        return salaService.consultarDisponibilidad(
+                fecha,
+                horaInicio,
+                horaFin
+        );
+    }
+
 }
